@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import axios from 'axios'
+import axios from './axios'
 import './App.css'
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
   // using Async Await
   const getPostAPIData = async () => {
     try {
-      const res = await axios.get("https://jsonplaceholder.typicode.com/posts");
+      const res = await axios.get("/posts");
       setPostData(res.data);
     } catch (error) {
       setIsError(error.message);
